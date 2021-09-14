@@ -10942,3 +10942,11 @@ a.text-dark:focus {
   }
 }
 
+table tbody tr:nth-of-type(odd) {
+  background-color: lightblue;
+}
+
+table tbody tr:nth-of-type(odd) img {
+  height: 250px;
+}
+
