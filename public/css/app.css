@@ -10950,3 +10950,11 @@ table tbody tr:nth-of-type(odd) img {
   height: 250px;
 }
 
+.show div img {
+  width: 100%;
+}
+
+.show div a {
+  display: block;
+}
+
