@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-  <a href="{{route('post.create')}}"><button>Aggiungi post</button></a>
+  <a href="{{route('post.create')}}"><button><i class="fas fa-plus"></i> post</button></a>
     <table class="table">
         <thead class="position-sticky">
           <tr>
@@ -20,7 +20,7 @@
               <td>{{$item->user}}</td>
               <td>{{$item->text}}</td>
               <td>{{$item->img}}</td>
-              <td><a href="{{route('post.show', $item)}}">LINk</a></td>
+              <td><a href="{{route('post.show', $item)}}"><i class="fas fa-search"></i></a></td>
             </tr>
                 
             @endforeach
