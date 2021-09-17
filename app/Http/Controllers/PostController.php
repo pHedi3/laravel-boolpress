@@ -56,9 +56,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        $post = Post::find($id);
+        $post = Post::find($post->id);
         return view('post.show', compact('post'));
     }
 
@@ -68,9 +68,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        $post = Post::find($post->id);
+        return view('post.edit', compact('post'));
+
     }
 
     /**
@@ -80,9 +82,13 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Post $post)
     {
-        //
+        $data = $request->all();       
+
+        $this->fillAndSave($post, $data);
+
+        return redirect()->route('post.show', $post);
     }
 
     /**
@@ -91,8 +97,16 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect()->route('post.index');
+    }
+    private function fillAndSave(Post $post, $data) {
+        $post->user = $data['user'];
+        $post->text = $data['text'];
+        $post->img = $data['img'];
+        $post->save();
     }
 }
