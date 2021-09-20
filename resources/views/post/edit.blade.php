@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container edit">
     <div class="row">
         <div class="col-12">
             @if ($errors->any())
@@ -19,11 +19,14 @@
             @method('PUT')
             <label for="user">User</label>
             <input type="text" name="user" id="user" value="{{$post->user}}" >
+            <br>
             <label for="text">Text</label>
-            <input type="textarea" name="text" id="text" value="{{$post->text}}" >
+            <textarea name="text" id="text" value="{{$post->text}}" > </textarea>
+            <br>
             <label for="imgage">Image</label>
             <input type="text" name="img" id="img" value="{{$post->img}}" >
-            <button type="submit" >Invia</button>
+            <br>
+            <button type="submit" class="btn btn-primary" >Invia</button>
         </form>
     </div>
 </div>

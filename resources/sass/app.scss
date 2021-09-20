@@ -10,6 +10,10 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+.btn.btn-primary, .btn.btn-danger {
+    color: white;
+}
+
 table {
     tbody {
         tr {
@@ -28,11 +32,45 @@ table {
 
 .show {
     div {
+        .user {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
         img {
             width: 100%;
         }
-        a {
-            display: block;
+    .button {
+        margin-top: 24px;
+    }
+    }
+}
+
+.index {
+    table {
+        th {
+            font-size: 18px;
         }
+        td {
+            text-align: center;
+        }
+    }
+}
+
+.edit, .create {
+    form {
+        margin: 0 auto;
+        label {
+            font-weight: bold;
+            margin-right: 24px;
+            vertical-align: top;
+        }
+    input {
+        margin-bottom: 24px;
+    }
+    textarea {
+        width: 600px;
+        margin-bottom: 24px;
+    }
     }
 }

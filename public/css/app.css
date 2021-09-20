@@ -16770,6 +16770,11 @@ fieldset:disabled .btn {
   }
 }
 
+.btn.btn-primary,
+.btn.btn-danger {
+  color: white;
+}
+
 table tbody tr:nth-of-type(odd) {
   background-color: lightblue;
 }
@@ -16778,11 +16783,48 @@ table tbody tr:nth-of-type(odd) img {
   height: 250px;
 }
 
+.show div .user {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
 .show div img {
   width: 100%;
 }
 
-.show div a {
-  display: block;
+.show div .button {
+  margin-top: 24px;
+}
+
+.index table th {
+  font-size: 18px;
+}
+
+.index table td {
+  text-align: center;
+}
+
+.edit form,
+.create form {
+  margin: 0 auto;
+}
+
+.edit form label,
+.create form label {
+  font-weight: bold;
+  margin-right: 24px;
+  vertical-align: top;
+}
+
+.edit form input,
+.create form input {
+  margin-bottom: 24px;
+}
+
+.edit form textarea,
+.create form textarea {
+  width: 600px;
+  margin-bottom: 24px;
 }
 

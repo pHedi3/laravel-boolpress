@@ -41,11 +41,10 @@ class PostController extends Controller
         ]);
 
         $data = $request->all();
+
         $newpost = new Post();
-        $newpost->user = $data['user'];
-        $newpost->text = $data['text'];
-        $newpost->img = $data['img'];
-        $newpost->save();
+        
+        $this->fillAndSave($newpost, $data);
 
         return redirect()->route('post.show', $newpost->id);
     }
@@ -84,6 +83,10 @@ class PostController extends Controller
      */
     public function update(Request $request,Post $post)
     {
+        $request->validate([
+            'img' => 'url'
+        ]);
+
         $data = $request->all();       
 
         $this->fillAndSave($post, $data);
@@ -103,6 +106,7 @@ class PostController extends Controller
 
         return redirect()->route('post.index');
     }
+
     private function fillAndSave(Post $post, $data) {
         $post->user = $data['user'];
         $post->text = $data['text'];
