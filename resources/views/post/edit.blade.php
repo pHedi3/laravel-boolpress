@@ -21,10 +21,19 @@
             <input type="text" name="user" id="user" value="{{$post->user}}" >
             <br>
             <label for="text">Text</label>
-            <textarea name="text" id="text" value="{{$post->text}}" > </textarea>
+            <textarea name="text" id="text" >{{$post->text}} </textarea>
             <br>
             <label for="imgage">Image</label>
             <input type="text" name="img" id="img" value="{{$post->img}}" >
+            <br>
+            <select class="form-select" aria-label="Default select example" name="category_id">
+                <option selected value="{{$post->post_categories_id}}">{{$post->postCategory->tag}}</option>
+                @foreach ($category as $item)
+                    @if ($item != $post->postCategory )
+                        <option value="{{$item->id}}">{{$item->tag}}</option>
+                    @endif  
+                @endforeach
+            </select>
             <br>
             <button type="submit" class="btn btn-primary" >Invia</button>
         </form>
