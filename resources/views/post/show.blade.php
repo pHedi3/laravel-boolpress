@@ -1,12 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+@dd($post->postCatagory)
 <div class="container show">
     <div class="row">
         <div class="col-6">
             <div class="row">
                 <div class="col-6 user">{{$post->user}}</div>
                 <div class="col-12">{{$post->text}}</div>
+                <div class="col-6">{{$post->postCatagory}}</div>
             </div>
         </div>
         <div class="col-6">
