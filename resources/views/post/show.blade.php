@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-@dd($post->postCatagory)
+@dd($post->post_categories_id)
 <div class="container show">
     <div class="row">
         <div class="col-6">

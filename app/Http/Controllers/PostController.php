@@ -59,7 +59,6 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        $post = Post::find($post->id);
         return view('post.show', compact('post'));
     }
 
@@ -113,7 +112,7 @@ class PostController extends Controller
         $post->user = $data['user'];
         $post->text = $data['text'];
         $post->img = $data['img'];
-        $post->category_id = $data['category_id'];
+        $post->post_categories_id = $data['category_id'];
         $post->save();
     }
 }

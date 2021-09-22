@@ -14,8 +14,8 @@ class UpdatePostsTable extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('post_categories');
+            $table->unsignedBigInteger('post_categories_id');
+            $table->foreign('post_categories_id')->references('id')->on('post_categories');
         });
     }
 
@@ -26,10 +26,10 @@ class UpdatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::table('books', function (Blueprint $table) {
+        Schema::table('posts', function (Blueprint $table) {
 
             $table->dropForeign('posts_category_id_foreign');
-            $table->dropColumn('category_id');
+            $table->dropColumn('post_categories_id');
 
         });
     }

@@ -42,7 +42,7 @@ class PostTableSeeder extends Seeder
             $newpost->img = $faker->imageUrl(640, 480, 'animals', true);
             $randCategoryKey = array_rand($allIdCategories, 1);
             $categoryID = $allIdCategories[$randCategoryKey];
-            $newpost->category_id = $categoryID;
+            $newpost->post_categories_id = $categoryID;
             $newpost->save();
 
         };
