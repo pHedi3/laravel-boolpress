@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class PostCategory extends Model
 {
     public function post() {
-        return $this->hasMany(Post::class, 'post_categories_id');
+        return $this->hasMany(Post::class);
     }
 }

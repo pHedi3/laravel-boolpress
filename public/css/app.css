@@ -16789,6 +16789,16 @@ table tbody tr:nth-of-type(odd) img {
   margin-bottom: 12px;
 }
 
+.show div .tag {
+  margin-top: 12px;
+  color: white;
+  text-align: center;
+  padding: 4px;
+  background-color: cadetblue;
+  border: 4px solid #3b6162;
+  border-radius: 6px;
+}
+
 .show div img {
   width: 100%;
 }
